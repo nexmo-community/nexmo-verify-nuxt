@@ -23,8 +23,7 @@ app.post('/send', async (req, res) => {
       number: phoneNumber,
       brand: 'MyApp',
       code_length: 6,
-      pin_expiry: 120,
-      next_event_wait: 120
+      pin_expiry: 60
     },
     async (err, result) => {
       if (err || result.status !== '0') {
