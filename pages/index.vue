@@ -5,19 +5,19 @@
         <h1><i class="medium material-icons">verified_user</i> Login</h1>
       </div>
     </div>
-    <div class="row" v-if="request.token == ''">
+    <div class="row" v-if="request.token === ''">
       <form v-on:submit.prevent class="col s12">
-        <div class="row center-align">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">phone</i>
-            <input type="text" id="phoneNumber" v-model="phoneNumber"/>
-            <label for="phoneNumber"> Phone Number</label>
-          </div>
-          <div class="row center-align">
-            <button v-on:click.stop.prevent="sendVerificationCode" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">account_box</i>Send me a verifiation code</button>
-          </div>
+      <div class="row center-align">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <input type="text" id="phoneNumber" v-model="phoneNumber"/>
+          <label for="phoneNumber"> Phone Number</label>
         </div>
-      </form>
+        <div class="row center-align">
+          <button v-on:click.stop.prevent="sendVerificationCode" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">account_box</i>Send me a verifiation code</button>
+        </div>
+      </div>
+    </form>
     </div>
     <div class="row" v-else>
       <form v-on:submit.prevent class="col s12">
@@ -71,7 +71,8 @@ export default {
       if (!data.token) {
         this.displayMessage('error', data.error_text || data.error);
       } else {
-        this.$store.commit('SET_TOKEN', data.token);
+        const { token } = data;
+        this.$store.commit('SET_TOKEN', token);
         this.$nuxt.$router.replace({ path: '/secret' });
       }
     },
