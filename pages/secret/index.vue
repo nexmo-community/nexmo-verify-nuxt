@@ -20,7 +20,6 @@ export default {
 
   methods: {
     logout: function() {
-      localStorage.removeItem('nexmo_verify');
       this.$store.commit('INVALIDATE_TOKEN');
       this.$nuxt.$router.replace({ path: '/' });
     }
