@@ -11,7 +11,7 @@ $ git clone https://github.com/nexmo-community/nexmo-verify-nuxt.git
 $ cd nexmo-verify-nuxt && npm install
 ```
 
-Once installed, you will also need to create a file in the root directory called `.env`, into which you should put your API credentials and an ecryption key for the JSON Web Tokens.
+Once installed, you will also need to create a file in the root directory called `.env`, into which you should put your API credentials and an encryption key for the JSON Web Tokens.
 
 ```yaml
 apiKey='YOUR NEXMO API KEY'
