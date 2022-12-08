@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.3.0",
     "nexmo": "^2.3.1-beta-1",
